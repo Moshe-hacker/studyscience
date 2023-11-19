@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>net6.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Ultraviolet.FMOD</RootNamespace>
+    <AssemblyName>Ultraviolet.Shims.Android.FMOD</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FMODJarPath>$(MSBuildProjectDirectory)\Jars\fmod.jar</FMODJarPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Jars\AboutJars.txt" />
+    <None Include="Additions\AboutAdditions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <TransformFile Include="Transforms\Metadata.xml" />
+    <TransformFile Include="Transforms\EnumFields.xml" />
+    <TransformFile Include="Transforms\EnumMethods.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="$(FMODJarPath)">
+      <Link>Jars\fmod.jar</Link>
+    </EmbeddedJar>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ultraviolet.FMOD\Ultraviolet.FMOD.csproj">
+      <Project>{2d9f99fd-93ee-4d9e-8ec9-718e6c67595e}</Project>
+      <Name>Ultraviolet.FMOD.NETStandard21</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ultraviolet\Ultraviolet.csproj">
+      <Project>{60ecc362-96e4-4a54-b280-23cb5cdb6903}</Project>
+      <Name>Ultraviolet.NETStandard21</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="BeforeBuild">
+    <Message Text="$(FMODJarPath)" Importance="high" />
+    <Error Text="Cannot find fmod.jar. Ensure the property $(FMODJarPath) points to the correct file." Condition=" '$(FMODJarPath)' == '' Or !Exists('$(FMODJarPath)')" />
+  </Target>
+</Project>

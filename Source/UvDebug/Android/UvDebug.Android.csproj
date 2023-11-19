@@ -1,0 +1,170 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <UltravioletContentDirectory>Content</UltravioletContentDirectory>
+    <UltravioletContentProject>Shared</UltravioletContentProject>
+    <IncludeUltravioletContentFiles>false</IncludeUltravioletContentFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>net6.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <ApplicationId>com.companyname.uvdebug.android</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <RootNamespace>UvDebug</RootNamespace>
+    <AssemblyName>UvDebug.Android</AssemblyName>
+  </PropertyGroup>
+  <Import Project="Ultraviolet.Android.targets" />
+  <ItemGroup>
+    <Reference Include="org.libsdl.app">
+      <HintPath>..\..\..\Dependencies\SDL2\Android\org.libsdl.app.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\BASS\Android\armeabi-v7a\libbass.so">
+      <Link>lib\armeabi-v7a\libbass.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FMOD\Android\armeabi-v7a\libfmod.so">
+      <Link>lib\armeabi-v7a\libfmod.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\armeabi-v7a\libfreetype.so">
+      <Link>lib\armeabi-v7a\libfreetype.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\armeabi-v7a\libharfbuzz.so">
+      <Link>lib\armeabi-v7a\libharfbuzz.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\armeabi-v7a\libpng16.so">
+      <Link>lib\armeabi-v7a\libpng16.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\ImGui\Android\armeabi-v7a\libcimgui.so">
+      <Link>lib\armeabi-v7a\libcimgui.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\armeabi-v7a\libSDL2.so">
+      <Link>lib\armeabi-v7a\libSDL2.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\armeabi-v7a\libhidapi.so">
+      <Link>lib\armeabi-v7a\libhidapi.so</Link>
+    </AndroidNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\BASS\Android\arm64-v8a\libbass.so">
+      <Link>lib\arm64-v8a\libbass.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FMOD\Android\arm64-v8a\libfmod.so">
+      <Link>lib\arm64-v8a\libfmod.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\arm64-v8a\libfreetype.so">
+      <Link>lib\arm64-v8a\libfreetype.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\arm64-v8a\libharfbuzz.so">
+      <Link>lib\arm64-v8a\libharfbuzz.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\arm64-v8a\libpng16.so">
+      <Link>lib\arm64-v8a\libpng16.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\ImGui\Android\arm64-v8a\libcimgui.so">
+      <Link>lib\arm64-v8a\libcimgui.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\arm64-v8a\libSDL2.so">
+      <Link>lib\arm64-v8a\libSDL2.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\arm64-v8a\libhidapi.so">
+      <Link>lib\arm64-v8a\libhidapi.so</Link>
+    </AndroidNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\BASS\Android\x86\libbass.so">
+      <Link>lib\x86\libbass.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FMOD\Android\x86\libfmod.so">
+      <Link>lib\x86\libfmod.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\x86\libfreetype.so">
+      <Link>lib\x86\libfreetype.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\x86\libharfbuzz.so">
+      <Link>lib\x86\libharfbuzz.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\x86\libpng16.so">
+      <Link>lib\x86\libpng16.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\ImGui\Android\x86\libcimgui.so">
+      <Link>lib\x86\libcimgui.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\x86\libSDL2.so">
+      <Link>lib\x86\libSDL2.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\x86\libhidapi.so">
+      <Link>lib\x86\libhidapi.so</Link>
+    </AndroidNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\BASS\Android\x86_64\libbass.so">
+      <Link>lib\x86_64\libbass.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FMOD\Android\x86_64\libfmod.so">
+      <Link>lib\x86_64\libfmod.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\x86_64\libfreetype.so">
+      <Link>lib\x86_64\libfreetype.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\x86_64\libharfbuzz.so">
+      <Link>lib\x86_64\libharfbuzz.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\FreeType2\Android\x86_64\libpng16.so">
+      <Link>lib\x86_64\libpng16.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\ImGui\Android\x86_64\libcimgui.so">
+      <Link>lib\x86_64\libcimgui.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\x86_64\libSDL2.so">
+      <Link>lib\x86_64\libSDL2.so</Link>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="..\..\..\Dependencies\SDL2\Android\x86_64\libhidapi.so">
+      <Link>lib\x86_64\libhidapi.so</Link>
+    </AndroidNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ultraviolet.BASS\Ultraviolet.BASS.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.Core\Ultraviolet.Core.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.FMOD\Ultraviolet.FMOD.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.FreeType2\Ultraviolet.FreeType2.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.ImGuiViewProvider.Bindings\Ultraviolet.ImGuiViewProvider.Bindings.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.ImGuiViewProvider\Ultraviolet.ImGuiViewProvider.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.OpenGL.Bindings\Ultraviolet.OpenGL.Bindings.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.OpenGL.Environment\Ultraviolet.OpenGL.Environment.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.OpenGL\Ultraviolet.OpenGL.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.Presentation.Uvss\Ultraviolet.Presentation.Uvss.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.Presentation\Ultraviolet.Presentation.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.SDL2\Ultraviolet.SDL2.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet.Shims.Android\Ultraviolet.Shims.Android.csproj" />
+    <ProjectReference Include="..\..\Ultraviolet\Ultraviolet.csproj" />
+    <ProjectReference Include="..\Shared\UvDebug.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Ultraviolet.Presentation.CompiledExpressions.dll" />
+    <EmbeddedResource Include="Content.uvarc" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+  -->
+  <Target Name="CustomBeforeBuild" BeforeTargets="BeforeBuild">
+    <Message Text="Precompiling content." />
+    <Exec Command="dotnet run --configuration $(Configuration) -compile:content -compile:expressions" WorkingDirectory="$(SolutionDir)UvDebug\NETCore" />
+  </Target>
+  <Target Name="BeforeBuildCopyResults" AfterTargets="CustomBeforeBuild">
+    <Copy SourceFiles="$(SolutionDir)UvDebug\NETCore\bin\$(Configuration)\net6.0\Content.uvarc" DestinationFolder="$(SolutionDir)UvDebug\Android" />
+    <Copy SourceFiles="$(SolutionDir)UvDebug\NETCore\bin\$(Configuration)\net6.0\Ultraviolet.Presentation.CompiledExpressions.dll" DestinationFolder="$(SolutionDir)UvDebug\Android" />
+  </Target>
+  <Target Name="BeforeBuildValidation" AfterTargets="BeforeBuildCopyResults">
+    <Error Condition="!Exists('Content.uvarc')" Text="Failed to generate content archive for UvDebug.Android." />
+    <Error Condition="!Exists('Ultraviolet.Presentation.CompiledExpressions.dll')" Text="Failed to generate compiled expressions assembly for UvDebug.Android." />
+  </Target>
+</Project>
